@@ -12,9 +12,13 @@ public class BookingService {
     public BookingService(BookingRepository bookingRepository) {
         this.bookingRepository = bookingRepository;
 
-        public Booking addBooking(Booking )
-
+        public Booking addBooking(Booking booking) {
+            for(Booking booking : bookingRepository.findAll()) {
+                bookingRepository.save(booking);
+            }
+        }
     }
+
     public List<Booking> getAllBookings() {
         return (List<Booking>) bookingRepository.findAll();
     }
